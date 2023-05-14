@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="styledonate.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <nav class="menu">
+    <ul>
+      <a href="index.html"><button>Home</button></a>
+      <a href="get.html"><button>Get</button></a>
+    </ul>
+  </nav>
+  <form action="https://sheetdb.io/api/v1/5quda1p484pkt" method="post" id="sheetdb-form">
+    <div class="container">
+      <header>
+        <h1>Free Foods</h1>
+      </header>
+      <hr>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="data[email]" required>
+
+      <label for="food"><b>Food</b></label>
+      <input type="text" placeholder="Food" name="data[food]" required>
+
+      <label for="description"><b>Description</b></label>
+      <input type="text" placeholder="Description of food" name="data[description]" required>
+
+      <label for="location"><b>Location</b></label>
+      <input type="text" placeholder="Your Location" name="data[location]" required>
+
+       <label for="instructions"><b>Instructions for Pickup</b></label>
+      <input type="text" placeholder="E.G. Available times, specific locations, cell number, address" name="data[instructions]" required>
+      
+      <div class="clearfix">
+        <button type="submit" class="donatebtn">Donate</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    var form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+      })
+        .then(response => {
+          // Handle the response here if needed
+          console.log(response);
+          // Redirect to a new page
+          window.location.href = "get.html";
+        })
+        .catch(error => {
+          // Handle any errors here
+          console.error(error);
+        });
+    });
+  </script>
+
+</body>
+
+</html>
