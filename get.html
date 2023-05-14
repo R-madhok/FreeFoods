@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Display</title>
+  <link rel="stylesheet" type="text/css" href="styleget.css">
+</head>
+<body>
+  <nav class="menu">
+    <ul>
+      <a href=index.html><button>Home</button></a>
+      <a href=donate.html><button>Donate</button></a>
+    </ul>
+  </nav>
+    <aside class="sidebar">
+      <h2>Sort Options</h2>
+      <label>
+        <input type="checkbox" id="alphabeticalSort"> Sort Alphabetically
+      </label>
+      <label>
+        <input type="checkbox" id="locationSort"> Sort by Location
+      </label>
+
+      <form id="signin-form">
+        <h2>Clear Listings</h2>
+        <input type="email" id="email-input" placeholder="Email" required>
+        <button type="submit">Clear listings</button>
+      </form>
+
+      <button id="clear-listings-btn" style="display: none;">Clear My Listings</button>
+    </aside>
+    <main class="content">
+      <header>
+        <h1>Free Food Directory</h1>
+      </header>
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Instructions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+  </div>
+  <script src="scriptget.js"></script>
+</body>
+</html>
